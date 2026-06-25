@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     
 }
 
@@ -8,6 +9,11 @@
     background-color: midnightblue;
     color: white;
     padding: 25px;
+}
+
+h1{
+    color: blue;
+    text-align: center;
 }
 
 h2{
@@ -21,11 +27,12 @@ h4{
 }
 
 input{
-    background-color: lightblue;
+    background-color: #1e3a5f;
     color: white;
     padding: 10px;
     border: 2px solid lightblue;
     margin-bottom: 15px;
+    flex: 1;
 }
 
 button{
@@ -43,6 +50,7 @@ ul{
 }
 
 ul li{
+    position: relative;
     padding: 12px;
     background-color:cornflowerblue ;
     font-size: 18px;
