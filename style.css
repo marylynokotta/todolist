@@ -9,8 +9,8 @@
     background-color: midnightblue;
     color: white;
     padding: 25px;
+    
 }
-
 h1{
     color: blue;
     text-align: center;
@@ -25,7 +25,12 @@ h4{
     color: dodgerblue;
     text-align: end;
 }
-
+.input-row{
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    
+}
 input{
     background-color: #1e3a5f;
     color: white;
@@ -40,6 +45,9 @@ button{
     color: white;
     padding: 10px;
     border: 2px solid skyblue;
+    white-space: nowrap;
+    
+
 
 }
 
