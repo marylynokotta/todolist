@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+
+.container{
+    background-color: midnightblue;
+    color: white;
+    padding: 25px;
+}
+
+h2{
+    color: white;
+    text-align: left;
+}
+
+h4{
+    color: dodgerblue;
+    text-align: end;
+}
+
+input{
+    background-color: lightblue;
+    color: white;
+    padding: 10px;
+    border: 2px solid lightblue;
+    margin-bottom: 15px;
+}
+
+button{
+    background-color: skyblue;
+    color: white;
+    padding: 10px;
+    border: 2px solid skyblue;
+
+}
+
+#myUL{
+    text-decoration: none;
+    gap: 10px;
+}
