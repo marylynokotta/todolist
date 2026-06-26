@@ -20,8 +20,9 @@
 }
 
 h1{
-    color: blue;
+    color: dodgerblue;
     text-align: center;
+    margin-bottom: 20px;
     
 }
 
@@ -38,6 +39,7 @@ h4{
     display: flex;
     width: 100%;
     gap: 10px;
+    margin-bottom: 15px;
     
 }
 input{
@@ -45,7 +47,6 @@ input{
     color: white;
     padding: 10px;
     border: 2px solid lightblue;
-    margin-bottom: 15px;
     flex: 1;
 }
 
@@ -55,6 +56,7 @@ button{
     padding: 10px;
     border: 2px solid skyblue;
     white-space: nowrap;
+    cursor: pointer;
     
 
 
@@ -83,7 +85,9 @@ ul li{
 }
 
 ul li:hover{
+    background-color: #6a8fd8;
     color: white;
+
 }
 
 ul li.checked{
@@ -91,18 +95,6 @@ ul li.checked{
     text-decoration: line-through;
 }
 
-ul li.checked::before{
-    content: '';
-    position: absolute;
-    border-color: skyblue;
-    border-style: solid;
-    border-width: 0 2px 2px 0;
-    top: 10px;
-    left: 16px;
-    height: 15px;
-    width: 7px;
-
-}
 
 li input[type="checkbox"] {
     margin-right: 10px;
