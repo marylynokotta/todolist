@@ -1,62 +1,64 @@
 var myNodelst = document.getElementsByTagName("LI");
-var i;
-for (i = 0; i < myNodelst.length; i++){
+for (var i = 0; i < myNodelst.length; i++) {
+    var checkbox = document.createElement("INPUT");
+    checkbox.type = "checkbox";
+    myNodelst[i].insertBefore(checkbox, myNodelst[i].firstChild);
+
     var span = document.createElement("SPAN");
-    var txt = document.createTextNode("\u00D7");
     span.className = "close";
-    span.appendChild(txt);
+    span.appendChild(document.createTextNode("\u00D7"));
     myNodelst[i].appendChild(span);
 }
 
+// Close button click handler for existing items
 var close = document.getElementsByClassName("close");
-var i;
-for (i = 0; i < close.length; i++){
-    close[i].onclick = function(){
-        var div = this.parentElement;
-        div.style.display ="none";
+for (var i = 0; i < close.length; i++) {
+    close[i].onclick = function () {
+        this.parentElement.style.display = "none";
     }
 }
 
-var close = document.getElementsByClassName("close");
-var i;
-for (i = 0; i < close.length; i++) {
-  close[i].onclick = function() {
-    var div = this.parentElement;
-    div.style.display = "none";
-  }
-}
-
-// Add a "checked" symbol when clicking on a list item
+// Check/uncheck on checkbox click
 var list = document.querySelector('ul');
-list.addEventListener('click', function(ev) {
-  if (ev.target.tagName === 'LI') {
-    ev.target.classList.toggle('checked');
-  }
-}, false);
-
-
-function newElement() {
-  var li = document.createElement("li");
-  var inputValue = document.getElementById("myInput").value;
-  var t = document.createTextNode(inputValue);
-  li.appendChild(t);
-  if (inputValue === '') {
-    alert("You must write something!");
-  } else {
-    document.getElementById("myUL").appendChild(li);
-  }
-  document.getElementById("myInput").value = "";
-
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  li.appendChild(span);
-
-  for (i = 0; i < close.length; i++) {
-    close[i].onclick = function() {
-      var div = this.parentElement;
-      div.style.display = "none";
+list.addEventListener('click', function (ev) {
+    if (ev.target.type === 'checkbox') {
+        var li = ev.target.parentElement;
+        if (ev.target.checked) {
+            li.classList.add('checked');
+        } else {
+            li.classList.remove('checked');
+        }
     }
-  }
+});
+
+// Add new task
+function newElement() {
+    var inputValue = document.getElementById("myInput").value;
+
+    if (inputValue === '') {
+        alert("You must write something!");
+        return;
+    }
+
+    var li = document.createElement("li");
+
+    // checkbox
+    var checkbox = document.createElement("INPUT");
+    checkbox.type = "checkbox";
+    li.appendChild(checkbox);
+
+    // task text
+    li.appendChild(document.createTextNode(inputValue));
+
+    // close button
+    var span = document.createElement("SPAN");
+    span.className = "close";
+    span.appendChild(document.createTextNode("\u00D7"));
+    span.onclick = function () {
+        this.parentElement.style.display = "none";
+    }
+
+    li.appendChild(span);
+    document.getElementById("myUL").appendChild(li);
+    document.getElementById("myInput").value = "";
 }

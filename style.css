@@ -87,7 +87,7 @@ ul li:hover{
 }
 
 ul li.checked{
-    background: white;
+    background-color: coral;
     text-decoration: line-through;
 }
 
@@ -103,3 +103,26 @@ ul li.checked::before{
     width: 7px;
 
 }
+
+li input[type="checkbox"] {
+    margin-right: 10px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    accent-color: skyblue;  
+
+}
+
+.close {
+    float: right;
+    cursor: pointer;
+    color: skyblue;
+    font-weight: bold;
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.close:hover {
+    color: white;
+}
+
