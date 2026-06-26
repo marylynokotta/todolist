@@ -15,6 +15,7 @@ var close = document.getElementsByClassName("close");
 for (var i = 0; i < close.length; i++) {
     close[i].onclick = function () {
         this.parentElement.style.display = "none";
+        updateProgress();
     }
 }
 
@@ -28,6 +29,7 @@ list.addEventListener('click', function (ev) {
         } else {
             li.classList.remove('checked');
         }
+        updateProgress();
     }
 });
 
@@ -56,9 +58,27 @@ function newElement() {
     span.appendChild(document.createTextNode("\u00D7"));
     span.onclick = function () {
         this.parentElement.style.display = "none";
+        updateProgress();
     }
 
     li.appendChild(span);
     document.getElementById("myUL").appendChild(li);
     document.getElementById("myInput").value = "";
+    updateProgress();
 }
+
+// Progress bar
+function updateProgress() {
+    var total = document.querySelectorAll('#myUL li').length;
+    var done = document.querySelectorAll('#myUL li.checked').length;
+    var pct = total === 0 ? 0 : (done / total) * 100;
+    document.getElementById('progressBar').style.width = pct + '%';
+}
+
+// Enter key to add task
+document.getElementById('myInput').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') newElement();
+});
+
+// Run on page load to count seed tasks
+updateProgress();
