@@ -21,6 +21,7 @@
 
 h1{
     color: blue;
+    text-align: center;
     
 }
 
@@ -31,7 +32,7 @@ h2{
 
 h4{
     color: dodgerblue;
-    text-align: end;
+    
 }
 .input-row{
     display: flex;
